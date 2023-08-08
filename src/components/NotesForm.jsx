@@ -13,13 +13,14 @@ const NotesForm = () => {
     createNote({
       ...data,
       id: notes.length + 1,
+      color: ["bg-red-300", "bg-orange-300", "bg-neutral-500", "bg-slate-900"],
     });
     notify();
   };
 
   return (
     <form
-      className="w-[250px] p-4 rounded bg-gray-100 mx-auto mb-12 flex flex-col gap-4"
+      className="w-[250px] mt-4 p-4 rounded bg-gray-100 mx-auto mb-12 flex flex-col gap-2 text-sm"
       onSubmit={handleSubmit(onSubmit)}
     >
       <input
@@ -31,11 +32,12 @@ const NotesForm = () => {
         })}
         className="pl-4 text-white bg-black/90 py-1 rounded-lg p-4 focus:outline-none"
       />
-      <input
+      <textarea
         type="text"
+        rows={5}
         placeholder="Add Description"
         {...register("description")}
-        className="pl-4 text-white bg-black/90 py-1 rounded-lg p-4 focus:outline-none"
+        className="pl-4 text-white bg-black/90 py-1 rounded-lg p-4 focus:outline-none "
       />
       <button
         type="submit"
@@ -43,7 +45,12 @@ const NotesForm = () => {
       >
         Add
       </button>
-      <button type="reset">Reset</button>
+      <button
+        type="reset"
+        className="bg-red-400 px-4 py-1 w-fit mx-auto rounded"
+      >
+        Reset
+      </button>
       <Toaster
         position="bottom-right"
         toastOptions={{
