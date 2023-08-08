@@ -1,9 +1,12 @@
 import { useForm } from "react-hook-form";
 import { useNotes } from "../hooks/useNotes";
 import toast, { Toaster } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const NotesForm = () => {
   const { notes, createNote } = useNotes();
+
+  const navigate = useNavigate();
 
   const { register, handleSubmit } = useForm();
 
@@ -16,6 +19,7 @@ const NotesForm = () => {
       color: ["bg-red-300", "bg-orange-300", "bg-neutral-500", "bg-slate-900"],
     });
     notify();
+    navigate("/");
   };
 
   return (

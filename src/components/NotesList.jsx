@@ -19,7 +19,7 @@ const NotesList = () => {
 
   return (
     <>
-      <h1 className="text-white text-xl mb-5 text-center">Note List</h1>
+      <h1 className="text-white text-xl my-8 text-center">Note List</h1>
       {notes.length ? (
         <div className="grid items-center grid-flow-row-dense md:grid-flow-row-dense gap-2 md:max-w-[80vw] justify-center">
           {notes.map((note) =>
