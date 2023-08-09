@@ -6,6 +6,13 @@ export const NotesProvider = ({ children }) => {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
+    const notes = localStorage.getItem("notes");
+    const parsed = JSON.parse(notes);
+    console.log(parsed);
+    setNotes(parsed);
+  }, []);
+
+  useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notes));
   }, [notes]);
 

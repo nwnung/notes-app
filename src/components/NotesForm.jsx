@@ -21,7 +21,7 @@ const NotesForm = () => {
     notify();
     setTimeout(() => {
       navigate("/");
-    }, 2000);
+    }, 800);
   };
 
   return (
