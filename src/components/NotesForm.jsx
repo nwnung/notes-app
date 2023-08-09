@@ -19,7 +19,9 @@ const NotesForm = () => {
       color: ["bg-red-300", "bg-orange-300", "bg-neutral-500", "bg-slate-900"],
     });
     notify();
-    navigate("/");
+    setTimeout(() => {
+      navigate("/");
+    }, 2000);
   };
 
   return (
